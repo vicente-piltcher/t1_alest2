@@ -2,16 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Node {
-    String value;
+    int data;
     List<Node> children;
 
-    Node(String value) {
-        this.value = value;
+    public Node(int data) {
+        this.data = data;
         this.children = new ArrayList<>();
     }
 
-    // Método para adicionar um filho a este nó
-    void addChild(Node child) {
+    public void addChild(Node child) {
         this.children.add(child);
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(data);
     }
 }

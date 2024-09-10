@@ -2,15 +2,19 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String file = "";
+        ArrayList<String> lines = new ArrayList<>();
+        
+        
 
         System.out.println("Escolha a arvore que deseja percorrer: ");
-        System.out.print("\n1 - casod30.txt\n2 - casod60.txt\n3 - casod90.txt\n4 - casod120.txt\n5 - casod150.txt\n6 - casod180.txt\n7 - casod250.txt\n8 - casod300.txt\n\n");
+        System.out.print("\n1 - casod30.txt\n2 - casod60.txt\n3 - casod90.txt\n4 - casod120.txt\n5 - casod150.txt\n6 - casod180.txt\n7 - casod250.txt\n8 - casod300.txt\n9 - caso teste\n\n");
 
         System.out.print("Sua escolha: ");
         int choose = sc.nextInt();
@@ -39,7 +43,9 @@ public class App {
                 break;
             case 8:
                 file = "_casod300.txt";
-                break;     
+                break; 
+            case 9:
+                file = "__teste.txt";    
             default:
                 System.exit(0);
                 break;
@@ -48,13 +54,13 @@ public class App {
         try{
             FileReader arq = new FileReader(file);
             BufferedReader buf = new BufferedReader(arq);
-
             String linha = buf.readLine();
 
             while(linha != null){
-                System.out.printf("%s\n", linha);
+                lines.add(linha);
                 linha = buf.readLine();
             }
+            lines.remove(0);
 
             arq.close();
         } catch (IOException e){
