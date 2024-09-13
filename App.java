@@ -1,15 +1,12 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String file = "";
-        ArrayList<String> lines = new ArrayList<>();
         
         
 
@@ -45,28 +42,18 @@ public class App {
                 file = "_casod300.txt";
                 break; 
             case 9:
-                file = "__teste.txt";    
+                file = "__teste.txt";
+                break;    
             default:
                 System.exit(0);
                 break;
         }
 
-        try{
-            FileReader arq = new FileReader(file);
-            BufferedReader buf = new BufferedReader(arq);
-            String linha = buf.readLine();
+        Tree tree = new Tree(file);
 
-            while(linha != null){
-                lines.add(linha);
-                linha = buf.readLine();
-            }
-            lines.remove(0);
+        tree.imprimeMatriz();
 
-            arq.close();
-        } catch (IOException e){
-            System.err.printf("Erro ao abrir o arquivo:",
-            e.getMessage());
-        }
+        //tree.displayTree();
 
         
     }
