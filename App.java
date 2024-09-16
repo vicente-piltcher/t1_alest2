@@ -51,7 +51,7 @@ public class App {
 
         Tree tree = new Tree(file);
 
-        tree.imprimeMatriz();
+        //tree.imprimeMatriz();
 
         //tree.displayTree();
 
