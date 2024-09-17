@@ -8,10 +8,8 @@ public class App {
         Scanner sc = new Scanner(System.in);
         String file = "";
         
-        
-
         System.out.println("Escolha a arvore que deseja percorrer: ");
-        System.out.print("\n1 - casod30.txt\n2 - casod60.txt\n3 - casod90.txt\n4 - casod120.txt\n5 - casod150.txt\n6 - casod180.txt\n7 - casod250.txt\n8 - casod300.txt\n9 - caso teste\n\n");
+        System.out.print("\n1 - casod30.txt\n2 - casod60.txt\n3 - casod90.txt\n4 - casod120.txt\n5 - casod150.txt\n6 - casod180.txt\n7 - casod250.txt\n8 - casod300.txt\n\n");
 
         System.out.print("Sua escolha: ");
         int choose = sc.nextInt();
@@ -40,10 +38,7 @@ public class App {
                 break;
             case 8:
                 file = "_casod300.txt";
-                break; 
-            case 9:
-                file = "__teste.txt";
-                break;    
+                break;   
             default:
                 System.exit(0);
                 break;
